@@ -1,14 +1,22 @@
+import os
 import pandas as pd
 
 
 class MusicDataLoader:
 
     def __init__(self):
-        self.calm_xlsx = pd.read_excel("D:/Projects/Moodify/dataset/Calm.xlsx")
-        self.happy_xlsx = pd.read_excel("D:/Projects/Moodify/dataset/Happy.xlsx")
-        self.sad_xlsx = pd.read_excel("D:/Projects\Moodify/dataset/sad.xlsx")
+        current_dir = os.path.dirname(__file__)
+        self.calm_xlsx = pd.read_excel(
+            os.path.join(current_dir, "..", "dataset", "Calm.xlsx")
+        )
+        self.happy_xlsx = pd.read_excel(
+            os.path.join(current_dir, "..", "dataset", "Happy.xlsx")
+        )
+        self.sad_xlsx = pd.read_excel(
+            os.path.join(current_dir, "..", "dataset", "sad.xlsx")
+        )
         self.energetic_xlsx = pd.read_excel(
-            "D:/Projects/Moodify/dataset/energetic.xlsx"
+            os.path.join(current_dir, "..", "dataset", "energetic.xlsx")
         )
 
     def load_music_names(self):
