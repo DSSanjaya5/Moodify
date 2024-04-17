@@ -80,7 +80,7 @@ class CNNModel:
 
 def main():
     # Load and preprocess data
-    data_loader = DataLoader('/Moodify/fer2013.csv')
+    data_loader = DataLoader('/Moodify/dataset/fer2013.csv')
     X_train, X_val, X_test, y_train, y_val, y_test = data_loader.preprocess_data()
     datagen = data_loader.data_augmentation(X_train)
 
